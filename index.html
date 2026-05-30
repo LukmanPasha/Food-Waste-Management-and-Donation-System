@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Food Donate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* FIXED IMAGE: Replaced dead link with a premium food resource texture background */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65)), 
+                        url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Frosted Glassmorphism Container Card */
+        .portal-card {
+            background: rgba(255, 255, 255, 0.11);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 50px 35px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Glowing Accent Logo Badge */
+        .logo-badge {
+            background: rgba(46, 213, 115, 0.15);
+            color: #2ed573;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 34px;
+            border-radius: 50%;
+            margin: 0 auto 25px auto;
+            border: 1px solid rgba(46, 213, 115, 0.35);
+            box-shadow: 0 0 20px rgba(46, 213, 115, 0.25);
+        }
+
+        .logo {
+            font-size: 28px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Bright Colorful Gradient Dynamic Text */
+        .logo b {
+            background: linear-gradient(135deg, #00b894, #55efc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .para {
+            color: #d1d1d1;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 35px;
+            letter-spacing: 0.8px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 14px;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            width: 100%;
+        }
+
+        a i {
+            margin-right: 15px;
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        /* User Node Solid Color & Glow */
+        .btn-user {
+            background: linear-gradient(135deg, #2ed573, #1abc9c);
+            box-shadow: 0 5px 15px rgba(46, 213, 115, 0.3);
+        }
+
+        .btn-user:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(46, 213, 115, 0.55);
+        }
+
+        /* Admin Node Solid Color & Glow */
+        .btn-admin {
+            background: linear-gradient(135deg, #57606f, #2f3542);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(47, 53, 66, 0.3);
+        }
+
+        .btn-admin:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #747d8c, #2f3542);
+            box-shadow: 0 8px 22px rgba(47, 53, 66, 0.55);
+        }
+
+        /* Delivery Node Solid Color & Glow */
+        .btn-delivery {
+            background: linear-gradient(135deg, #ff9f43, #ff5252);
+            box-shadow: 0 5px 15px rgba(255, 159, 67, 0.3);
+        }
+
+        .btn-delivery:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(255, 159, 67, 0.55);
+        }
+
+        a:active {
+            transform: translateY(0);
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 0.5px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .portal-card {
+                padding: 40px 20px;
+            }
+            .logo {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-card">
+        <div class="logo-badge">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <p class="logo">Welcome to Food <b>Donate</b></p>
+        <p class="para">Identify your portal access node</p>
+        
+        <div class="button-container">
+            <a href="signup.php" class="btn-user">
+                <i class="fa-solid fa-user"></i> User Login
+            </a>
+            
+            <a href="admin/signup.php" class="btn-admin">
+                <i class="fa-solid fa-user-shield"></i> Admin Portal
+            </a>
+            
+            <a href="delivery/deliverysignup.php" class="btn-delivery">
+                <i class="fa-solid fa-motorcycle"></i> Delivery Personnel
+            </a>
+        </div>
+
+        <div class="footer-note">
+            &copy; 2026 Food Waste Management System Ecosystem
+        </div>
+    </div>
+
+</body>
+</html>
